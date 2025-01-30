@@ -230,7 +230,7 @@ public class LinkedList {
 		int thisIndex = indexOf(block);
 		if (thisIndex == -1){
 			throw new IllegalArgumentException(
-					"MemoryBlock not found in the list");
+					"index must be between 0 and size");
 		}
 		remove(thisIndex);
 
@@ -246,17 +246,15 @@ public class LinkedList {
 	/**
 	 * A textual representation of this list, for debugging.
 	 */
+	@Override
 	public String toString() {
-		//// Replace the following statement with your code
-		String result = "";
+		String s = "";
 		Node current = first;
-		while (current != null){
-         result += current.toString();
-		 current = current.next;
+		while (current != null) {
+			s = s+  current.block + " ";
+			current = current.next;
 		}
-       
-
-
-		return result  ;
+		return s;
 	}
 }
+
